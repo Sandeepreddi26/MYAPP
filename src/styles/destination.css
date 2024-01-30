@@ -1,0 +1,18 @@
+.transaction-table {
+    margin: auto;
+    margin-bottom: 80px;
+    text-align: center;
+    border-collapse: collapse;
+    width: 75%;
+  }
+  .transaction-table th, .transaction-table td {
+    border: 1px solid #ab1717; /* Change the border color and width as needed */
+    padding: 8px;
+    text-align: left;
+  }
+  .transaction-table th {
+    background-color: #f2f2f2; /* Change the background color of header cells */
+  }
+  .filter-input{
+    margin-left: 50px;
+  }

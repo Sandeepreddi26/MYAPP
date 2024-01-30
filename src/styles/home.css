@@ -1,0 +1,6 @@
+body {
+    background-image: url('C:\Users\sande\Desktop\React2\myapp\src\images\img.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }

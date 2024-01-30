@@ -1,0 +1,25 @@
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .profile-container p {
+    margin-bottom: 10px;
+  }
+  
+  .profile-container p:first-child {
+    font-weight: bold;
+  }
+  
+  .profile-container p:nth-child(odd) {
+    color: #333;
+  }
+  
+  .profile-container p:nth-child(even) {
+    color: #666;
+  }
+  

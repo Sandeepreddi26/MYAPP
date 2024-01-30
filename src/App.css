@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-image: url('C:/Users/sande/Desktop/React2/myapp/src/images/FFP.jpg');
+}

@@ -1,0 +1,78 @@
+/* Add your custom styles here */
+
+.container {
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .row {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding:10px;
+    font-size: 16px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  body {
+    background-image: url('C:\Users\sande\Desktop\React2\myapp\src\images\img.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  /* Add additional styles as needed */
+  /* login.css */
+
+.container {
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 18px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.link {
+  color: #007bff;
+}
+
+  

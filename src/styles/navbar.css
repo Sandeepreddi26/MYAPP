@@ -1,0 +1,66 @@
+/* navbar.css */
+
+.navigation {
+  background-color:grey; /* Background color of the navigation bar */
+  padding: 10px 20px; /* Padding around the navigation elements */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-name {
+  color: #fff; /* Color of the brand name */
+  text-decoration: none;
+  font-size: 1.5rem; /* Font size of the brand name */
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff; /* Color of the hamburger icon */
+  font-size: 1.5rem; /* Font size of the hamburger icon */
+}
+
+.navigation-menu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-menu li {
+  margin-right: 20px; /* Spacing between navigation items */
+}
+
+.navigation-menu li a {
+  color: #fff; /* Color of navigation links */
+  text-decoration: none;
+  font-size: 1rem; /* Font size of navigation links */
+}
+
+.navigation-menu li a:hover {
+  text-decoration: underline; /* Underline effect on hover */
+}
+
+/* Expanded navigation menu */
+.navigation-menu.expanded {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Adjust this value based on the height of your navigation bar */
+  left: 0;
+  background-color: #333; /* Background color of expanded navigation menu */
+  padding: 10px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .navigation-menu {
+    display: none; /* Hide navigation menu on smaller screens */
+  }
+
+  .navigation-menu.expanded {
+    display: flex; /* Show expanded navigation menu on smaller screens */
+  }
+}
