@@ -8,6 +8,7 @@ import 'C:/Users/vinee/OneDrive/Desktop/MYAPP/src/styles/member.css';
 const Points = (props) => {
     const [points, setPoints] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [TravelInfo,setTravelInfo] = useState(null);
     const ticketId=props.ticketId
     console.log("****",ticketId)
     console.log(ticketId)
@@ -24,8 +25,20 @@ const Points = (props) => {
                 setLoading(false);
             }
         };
+        const getTicketDetails=async() =>{
+            try{
+                setLoading(true);
+                const response = await axios.get(`http://localhost:8080/TravelInfo/${ticketId}`);
+                setTravelInfo(response.data);
+                setLoading(false);
+            } catch(error) {
+                console.error('Error fetching travelinfo data', error);
+                setLoading(false);
+            }
+        }
 
         fetchPoints();
+        getTicketDetails();
 
         // Clean-up function (optional)
         return () => {
@@ -57,7 +70,12 @@ const Points = (props) => {
                     )}
                 </div>
             </div>
+            <div>
+                
+                
+            </div>
         </div>
+        
     );
 };
 
