@@ -2,7 +2,7 @@ import Header from './Header'
 import React, { useState, useEffect  } from 'react';
 import axios from 'axios';
 // import { useLocation } from 'react-router-dom';
-import 'C:/Users/sande/Desktop/React2/myapp/src/styles/member.css';
+import 'C:/Users/vinee/OneDrive/Desktop/MYAPP/src/styles/member.css';
 
 
 const Points = (props) => {

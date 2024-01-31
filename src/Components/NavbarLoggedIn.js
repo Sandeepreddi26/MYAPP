@@ -2,7 +2,7 @@ import React, { useState } from "react"
 // import useHistory from 'react'
 // import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import 'C:/Users/sande/Desktop/React2/myapp/src/styles/navbar.css';
+import 'C:/Users/vinee/OneDrive/Desktop/MYAPP/src/styles/navbar.css';
 
 
 export default function NavbarLoggedIn(props) {

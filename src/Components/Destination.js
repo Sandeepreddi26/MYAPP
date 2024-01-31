@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Header from './Header';
-import 'C:/Users/sande/Desktop/React2/myapp/src/styles/destination.css'
+import 'C:/Users/vinee/OneDrive/Desktop/MYAPP/src/styles/destination.css'
 
 const Destination = () => {
     // const accno = props.accno || 'No accno provided';

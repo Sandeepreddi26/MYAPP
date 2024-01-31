@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
-import 'C:/Users/sande/Desktop/React2/myapp/src/styles/profile.css'
+import 'C:/Users/vinee/OneDrive/Desktop/MYAPP/src/styles/profile.css'
 // import { MemberIdContext } from './MemberIdContext';
 
 const Profile = (props) => {
