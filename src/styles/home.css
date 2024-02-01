@@ -4,3 +4,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
   }
+  .member{
+    text-align:center;
+    background-color: rgb(245, 238, 238);
+    width:200px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-left: 500px;
+  }

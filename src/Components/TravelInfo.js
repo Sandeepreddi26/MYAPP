@@ -2,27 +2,36 @@ import React from 'react'
 import { useState } from "react";
 import axios from "axios";
 import Header from './Header';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 
 export default function TravelInfo({onSubmit}) {
   const [ticketId, setTicketId] = useState("");
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const ticketID=ticketId
   
   
   async function save(event) {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:8080/TravelInfo/validate/"+ticketID, {})
-      if(Response.data==null){
-        alert("Invalide data");
-      }
-      onSubmit(ticketID)
-      console.log(ticketID)
-      // navigate("/points",{state:{ticketId:ticketId}})
+      console.log("**************************************************************");
+      const response=await axios.post(`http://localhost:8080/TravelInfo/validate/${ticketID}`, {})  
+        if(response.data===""){
+          alert("Invalid TicketId")
+          return;
+        }
+        else if(response.data.ticketId===0){
+          alert("points already have been claimed on this ticket")
+          onSubmit(ticketID);
+        }
+       else{ 
+          alert("Hurrey")
+          onSubmit(ticketID);
+       }
+      console.log("Ticket ID submitted:", ticketID);
     } catch (err) {
-      alert(err);
+      console.error("Error:", err);
+      alert("Error occurred while saving");
     }
   }
   return (

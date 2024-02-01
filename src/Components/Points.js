@@ -1,17 +1,22 @@
-import Header from './Header'
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { useLocation } from 'react-router-dom';
-import 'C:/Users/vinee/OneDrive/Desktop/MYAPP/src/styles/member.css';
-
+import Header from './Header';
 
 const Points = (props) => {
     const [points, setPoints] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [TravelInfo,setTravelInfo] = useState(null);
-    const ticketId=props.ticketId
-    console.log("****",ticketId)
-    console.log(ticketId)
+    const [travelInfo, setTravelInfo] = useState({
+        ticketId:"",
+        memberId:"",
+        destId:"",
+        date:"",
+        personTravelling:"",
+        totalMembers:""
+    });
+
+    // Declare ticketId variable
+    const ticketId = props.ticketId;
+
     useEffect(() => {
         const fetchPoints = async () => {
             try {
@@ -19,50 +24,33 @@ const Points = (props) => {
                 // Fetch points data for the logged-in member
                 const response = await axios.get(`http://localhost:8080/Points/${ticketId}`);
                 setPoints(response.data);
+                const response1 = await axios.get(`http://localhost:8080/TravelInfo/${ticketId}`);
+                setTravelInfo(response1.data);
+                console.log(response1.data);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching points data:', error);
                 setLoading(false);
             }
         };
-        const getTicketDetails=async() =>{
-            try{
-                setLoading(true);
-                const response = await axios.get(`http://localhost:8080/TravelInfo/${ticketId}`);
-                setTravelInfo(response.data);
-                setLoading(false);
-            } catch(error) {
-                console.error('Error fetching travelinfo data', error);
-                setLoading(false);
-            }
-        }
 
         fetchPoints();
-        getTicketDetails();
 
         // Clean-up function (optional)
         return () => {
             // Any clean-up code if needed
         };
-    }, [ticketId]); // Fetch points data when memberId changes
+    }, [ticketId]); // Fetch points data when ticketId changes
 
     return (
-
-        <div >
+        <div>
             <Header />
-            {/* {prop} */}
-            {/* {prop.memberId} */}
-            {/* {console.log(prop)} */}
             <div className="member-container">
                 <div className="points-container">
                     {loading ? (
                         <p className="loading-text">Loading points data...</p>
                     ) : points ? (
                         <div className="member-details-container">
-
-                            {/* <p>Points ID: {points.pointsId}</p>
-                    <p>Member ID: {points.member}</p>
-                    <p>Ticket ID: {points.travelInfo}</p> */}
                             <p>Claimed Points: {points.points}</p>
                         </div>
                     ) : (
@@ -70,12 +58,29 @@ const Points = (props) => {
                     )}
                 </div>
             </div>
-            <div>
-                
-                
+            <div className='filter'>
+                <h3 style={{ textAlign: "center" }}>TravelInfo Details</h3>
+                <br></br>
+                <table className='transaction-table'>
+                    <thead>
+                        <tr>
+                            {/* Use Object.keys() to get the field names from the transaction object */}
+                            {Object.keys(travelInfo).map((field) => (
+                                <th key={field}>{field}</th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {/* Use Object.values() to get the values of each field in the transaction object */}
+                            {Object.values(travelInfo).map((value, index) => (
+                                <td key={index}>{typeof value === 'boolean' ? value.toString() : value}</td>
+                            ))}
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        
     );
 };
 

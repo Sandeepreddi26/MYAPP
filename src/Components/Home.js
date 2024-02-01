@@ -65,7 +65,9 @@ const Home = (props) => {
 
     return (
         <div >
+            <div>
             <Header memberId={memberId} />
+            </div>
             {/* {prop} */}
             {/* {prop.memberId} */}
             {/* {console.log(prop)} */}
@@ -81,7 +83,7 @@ const Home = (props) => {
                     {loading ? (
                         <p className="loading-text">Loading points data...</p>
                     ) : points ? (
-                        <div className="member-details-container">
+                        <div className="member">
 
                             {/* <p>Points ID: {points.pointsId}</p>
                     <p>Member ID: {points.member}</p>
